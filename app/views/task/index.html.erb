@@ -9,7 +9,7 @@
 <tr>
 
   <th> 
-    TASKS 
+  TASKS 
   </th>
   
   <th>
@@ -34,7 +34,7 @@
 
 <tr>
 
-<td> <%= task.task_name %>
+<td> <%= link_to "#{task.task_name}", "/show/#{task.id}" %>
 </td>
 
 <td> <%= task.task_description %>
@@ -53,6 +53,7 @@
 
 <% end %>
 </table>
+
 
 
 

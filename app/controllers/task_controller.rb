@@ -6,7 +6,7 @@ class TaskController < ApplicationController
   end
 
   def show
-    
+    @tasks = Task.find(:id)
   end
 
 end

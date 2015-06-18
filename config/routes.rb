@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'task#index'
-  get 'show' => 'task#show' 
+  get '/show/:id' => 'task#show' 
   
   # OR get "/" => 'welcome#index' lines 6&7 indentical.
 
