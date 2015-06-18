@@ -6,7 +6,8 @@ class TaskController < ApplicationController
   end
 
   def show
-    @tasks = Task.find(:id)
+    @show_task = Task.find(params[:id])
+
   end
 
 end
