@@ -1,0 +1,75 @@
+<h1> Tasks! </h1>
+
+<p>
+  Let's start getting things done! Use this app to start a task list. (Don't forget to check it off when you've completed something!)
+</p>
+
+
+<table border "5">
+<tr>
+
+  <th> 
+    TASKS 
+  </th>
+  
+  <th>
+  DESCRIPTION
+  </th>
+
+  <th> 
+  TASK COMPLETED
+  </th>
+
+  <th>
+  DATE STARTED
+  </th>
+
+  <th>
+  COMPLETE?
+  </th>
+
+</tr>
+
+<%@tasks.each do |task| %>
+
+<tr>
+
+<td> <%= task.task_name %>
+</td>
+
+<td> <%= task.task_description %>
+</td>
+
+<td> <%= task.task_completed %>
+</td>
+
+<td><%= task.task_started %>
+</td>
+
+<td><%= task.complete_task %>
+</td>
+
+</tr>
+
+<% end %>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
