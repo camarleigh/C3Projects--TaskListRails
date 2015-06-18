@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'task#index'
   get '/show/:id' => 'task#show' 
   
-  # OR get "/" => 'welcome#index' lines 6&7 indentical.
+  # root 'welcome#index' OR get "/" => 'welcome#index' #identical response with both.
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
