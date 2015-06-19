@@ -4,9 +4,17 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'task#index'
-  get '/show/:id' => 'task#show'
+  
   get '/new' => 'task#new'
-  post '/' => 'task#index' 
+  post '/task' => 'task#create'
+  
+  
+
+  get 'task/show/:id' => 'task#show'
+  
+  delete 'task/destroy/:id' => 'task#destroy'
+  
+
   
   # root 'welcome#index' OR get "/" => 'welcome#index' #identical response with both.
 

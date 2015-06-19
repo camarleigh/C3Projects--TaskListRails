@@ -4,7 +4,6 @@
   Let's start getting things done! Use this app to start a task list. (Don't forget to check it off when you've completed something!)
 </p>
 
-<a href="/new"> ADD A NEW TASK!</a>
 
 <table border "5">
 <tr>
@@ -42,7 +41,7 @@
 <td> <%= task.id %>
 </td>
 
-<td> <%= link_to "#{task.task_name}", "/show/#{task.id}" %>
+<td> <%= link_to "#{task.task_name}", "task/show/#{task.id}" %>
 </td>
 
 <td> <%= task.task_description %>
@@ -54,7 +53,7 @@
 <td><%= task.task_started %>
 </td>
 
-<td><%= task.complete_task %>
+<td><%= button_to "Done, Please Delete!", "/task/destroy/#{task.id}", method: :delete %>
 </td>
 
 </tr>
@@ -62,7 +61,8 @@
 <% end %>
 
 </table>
-<a href="/new"> ADD A NEW TASK!</a>
+
+<%= link_to "Add a New Task" , "/new" %>
 
 
 
