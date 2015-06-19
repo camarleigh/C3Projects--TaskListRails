@@ -12,7 +12,7 @@ class TaskController < ApplicationController
 
   def new #GET new task/ 
     @task = Task.new
-    @task = Task.new(create_params[:task])
+    
   end
 
 
@@ -23,19 +23,19 @@ class TaskController < ApplicationController
     redirect_to(root_url)
   end
 
-  # def destroy #Delete a particular task
-  #   @task = Task.find(params[:id])
-  #   @task.destroy
+  def destroy #Delete a particular task
+    @task = Task.find(params[:id])
+    @task.destroy
 
-  #   redirect_to(root_url)
-  # end
+    redirect_to(root_url)
+  end
 
 
   private
 
 
   def create_params                                
-    params.require(:task).permit(:task_name, :task_description)
+    params.permit(task:[:task_name, :task_description])
   end
 end
 

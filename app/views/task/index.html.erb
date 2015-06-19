@@ -53,7 +53,7 @@
 <td><%= task.task_started %>
 </td>
 
-<td><%= button_to "Done, Please Delete!", "/task/destroy/#{task.id}", method: :delete %>
+<td><%= button_to "Done, Please Delete!", "/task/destroy/#{task.id}", method: :delete, data: {confirm: "are you sure?"} %>
 </td>
 
 </tr>
