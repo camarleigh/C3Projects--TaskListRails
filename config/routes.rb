@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get     '/new' => 'task#new'
   post    '/task' => 'task#create'
   
+  get     '/task/edit/:id' =>  'task#edit'        
 
 
   

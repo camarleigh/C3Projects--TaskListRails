@@ -5,10 +5,21 @@ class TaskController < ApplicationController
     
   end
 
-  def show #GET one task/ show me this one particluar task, by iD
+  def show #GET one task/ show me this one particluar task, by id
     @task = Task.find(params[:id])
 
   end
+
+  def edit #GET one task to modify.
+    @task =  Task.find(params[:id])
+  end
+
+  def update #PUT this updated task to the db
+    @task = Task.find(params[:id])
+    
+
+  end
+
 
   def new #GET new task/ 
     @task = Task.new
@@ -23,7 +34,7 @@ class TaskController < ApplicationController
     redirect_to(root_url)
   end
 
-  def destroy #Delete a particular task
+  def destroy #DELETE a particular task
     @task = Task.find(params[:id])
     @task.destroy
 
