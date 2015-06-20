@@ -5,18 +5,20 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
 
-  root    'task#index'
-
-  get     'task/show/:id' => 'task#show'
+  root    'tasks#index'
   
-  get     '/new' => 'task#new'
-  post    '/task' => 'task#create'
+  get     '/tasks/new' => 'tasks#new'
+  get     '/tasks/:id/edit' =>  'tasks#edit'
+  get     '/tasks/:id' => 'tasks#show'
   
-  get     '/task/edit/:id' =>  'task#edit'        
+  post    '/tasks' => 'tasks#create'
+  patch   '/tasks/:id/edit' => "tasks#update"  
+  
+          
 
 
   
-  delete  'task/destroy/:id' => 'task#destroy'
+  delete  '/tasks/:id' => 'tasks#destroy'
   
 
   
@@ -29,7 +31,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+    resources :tasks
 
   # Example resource route with options:
   #   resources :products do
