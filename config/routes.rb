@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   get     '/tasks/:id' => 'tasks#show'
   
   post    '/tasks' => 'tasks#create'
-  patch   '/tasks/:id/edit' => "tasks#update"  
+  patch   '/tasks/:id/edit' => "tasks#update"
+  patch   '/tasks/:id/complete'=> "tasks#complete"  
   
           
 

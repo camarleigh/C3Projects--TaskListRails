@@ -16,8 +16,6 @@ class TasksController < ApplicationController
 
   def update #PATCH this updated task to the db
     @task = Task.find(params[:id]) 
-    # @task = Task.update_attributes(create_params[:id])
-    # @task.update(params[:task].keys,params.values)
     @task.task_name = create_params[:task][:task_name]
     @task.task_description = create_params[:task][:task_description]
     @task.task_completed = create_params[:task][:task_completed]
@@ -25,8 +23,6 @@ class TasksController < ApplicationController
     @task.save
     redirect_to(root_url) 
   end
-
-
 
   def new #GET new task/ 
     @task = Task.new
@@ -47,6 +43,14 @@ class TasksController < ApplicationController
 
     redirect_to(root_url)
   end
+
+  def complete
+    @task = Task.find(params[:id])
+    @task.task_completed = "#{Time.now}"
+    @task.save
+
+    redirect_to '/'
+ end
 
 
   private

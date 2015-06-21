@@ -9,9 +9,6 @@
 <table border "5">
 <tr>
 
-  <th> 
-   ID 
-  </th>
 
   <th> 
   TASKS 
@@ -39,10 +36,7 @@
 
 <tr>
 
-<td> <%= task.id %>
-</td>
-
-<td> <%= link_to "#{task.task_name}", "task/show/#{task.id}" %>
+<td> <%= link_to "#{task.task_name}", "tasks/#{task.id}" %>
 </td>
 
 <td> <%= task.task_description %>
@@ -58,7 +52,7 @@
 <td>
   <%= button_to "Edit", "/tasks/#{task.id}/edit", method: :get %>
 
-  <%= button_to "Complete!", "/task/destroy/#{task.id}", method: :update, data: {confirm: "Did you REAALLLLY do this?"} %>
+  <%= button_to "Complete!", "/tasks/#{task.id}/complete", method: :patch, data: {confirm: "Did you REAALLLLY do this?"} %>
 
   <%= button_to "Delete!", "/tasks/#{task.id}", method: :delete, data: {confirm: "are you sure?"} %>
 </td>
