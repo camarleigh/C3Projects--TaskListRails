@@ -26,9 +26,7 @@ class TasksController < ApplicationController
 
   def new #GET new task/ 
     @task = Task.new
-    
   end
-
 
   def create #POST new task
     @task = Task.new(create_params[:task])
@@ -46,11 +44,11 @@ class TasksController < ApplicationController
 
   def complete
     @task = Task.find(params[:id])
-    @task.task_completed = "#{Time.now}"
+    @task.task_completed = Time.now
     @task.save
 
-    redirect_to '/'
- end
+    redirect_to(root_url)
+  end
 
 
   private
