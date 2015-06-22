@@ -1,6 +1,7 @@
 <h1>Let's Think About This Task:</h1>
 
 <ul>
+  
   <li> Task Number: <%= @task.id %> </li>
 
   <li> Task: <%= @task.task_name %> </li>
@@ -11,13 +12,14 @@
 
   <li> Date Started: <%= @task.task_started %> </li>
 
-  <li> Have you completed this task? <%= @task.complete_task %></li>
+  <li> Completed this task? <%= button_to "Complete!", "/tasks/#{@task.id}/complete", method: :patch, data: {confirm: "Did you REAALLLLY do this?"} %> </li>
 
 </ul>
 
 
-<%= button_to "Back to Task List", "/" %> 
-<%= button_to "Edit", "/tasks/#{@task.id}/edit", method: :get %>
+<%= button_to "Back to Task List", "/tasks" %> 
+<br>
+<%= button_to "Edit This Task", "/tasks/#{@task.id}/edit", method: :get %>
 
 
 

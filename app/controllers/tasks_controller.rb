@@ -1,13 +1,11 @@
 class TasksController < ApplicationController
   
   def index # GET tasks/ show me a list of all tasks
-    @tasks = Task.all
-    
+   @tasks = Task.all 
   end
 
   def show #GET one task/ show me this one particluar task, by id
-    @task = Task.find(params[:id])
-
+   @task = Task.find(params[:id])
   end
 
   def edit #GET one task to modify.
@@ -18,9 +16,9 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id]) 
     @task.task_name = create_params[:task][:task_name]
     @task.task_description = create_params[:task][:task_description]
-    @task.task_completed = create_params[:task][:task_completed]
-    @task.task_started = create_params[:task][:task_started]
+    @task.task_started = Time.now
     @task.save
+    
     redirect_to(root_url) 
   end
 
@@ -30,6 +28,7 @@ class TasksController < ApplicationController
 
   def create #POST new task
     @task = Task.new(create_params[:task])
+    @task.task_started = Time.now
     @task.save
 
     redirect_to(root_url)
@@ -52,7 +51,6 @@ class TasksController < ApplicationController
 
 
   private
-
 
   def create_params                                
     params.permit(task:[:id, :task_name, :task_description, :task_completed, :task_started])

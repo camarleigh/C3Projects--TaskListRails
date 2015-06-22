@@ -1,65 +1,65 @@
 <h1> Tasks! </h1>
 
 <p>
-  Let's start getting things done! Use this app to start a task list. (Don't forget to check it off when you've completed something!)
+  Let's start getting things done! Use this app to start a task list. (Don't forget to mark "Complete!" when you've finished something!)
 </p>
 
 <%= link_to "Add a New Task" , "/tasks/new" %>
 
 <table border "5">
-<tr>
+  <tr>
 
 
-  <th> 
-  TASKS 
-  </th>
+    <th> 
+      TASKS 
+    </th>
   
-  <th>
-  DESCRIPTION
-  </th>
+    <th>
+      DESCRIPTION
+    </th>
 
-  <th> 
-  TASK COMPLETED
-  </th>
+    <th> 
+      TASK COMPLETED
+    </th>
 
-  <th>
-  DATE STARTED
-  </th>
+    <th>
+      DATE STARTED
+    </th>
 
-  <th>
-  COMPLETE?
-  </th>
+    <th>
+      STATUS:
+    </th>
 
-</tr>
+  </tr>
 
-<%@tasks.each do |task| %>
+  <%@tasks.each do |task| %>
 
-<tr>
+    <tr>
 
-<td> <%= link_to "#{task.task_name}", "tasks/#{task.id}" %>
-</td>
+      <td> <%= link_to "#{task.task_name}", "tasks/#{task.id}" %>
+      </td>
 
-<td> <%= task.task_description %>
-</td>
+      <td> <%= task.task_description %>
+      </td>
 
-<td> <%= task.task_completed %>
-</td>
+      <td> <%= task.task_completed %>
+      </td>
 
-<td><%= task.task_started %>
-</td>
+      <td><%= task.task_started %>
+      </td>
 
 
-<td>
-  <%= button_to "Edit", "/tasks/#{task.id}/edit", method: :get %>
+      <td>
+        <%= button_to "Edit", "/tasks/#{task.id}/edit", method: :get %>
 
-  <%= button_to "Complete!", "/tasks/#{task.id}/complete", method: :patch, data: {confirm: "Did you REAALLLLY do this?"} %>
+        <%= button_to "Complete!", "/tasks/#{task.id}/complete", method: :patch, data: {confirm: "Did you REAALLLLY do this?"} %>
 
-  <%= button_to "Delete!", "/tasks/#{task.id}", method: :delete, data: {confirm: "are you sure?"} %>
-</td>
+        <%= button_to "Delete!", "/tasks/#{task.id}", method: :delete, data: {confirm: "are you sure?"} %>
+      </td>
 
-</tr>
+    </tr>
 
-<% end %>
+  <% end %>
 
 </table>
 
