@@ -12,6 +12,8 @@
 
   <li> Date Started: <%= @task.task_started %> </li>
 
+  <li> Person Assigned: <%= @task.person.name %> </li>
+
   <li> Completed this task? <%= button_to "Complete!", "/tasks/#{@task.id}/complete", method: :patch, data: {confirm: "Did you REAALLLLY do this?"} %> </li>
 
 </ul>
