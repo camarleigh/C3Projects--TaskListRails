@@ -8,9 +8,9 @@ end
 
 
 tasks = [
-  { task_name: "Buy lots of gin", task_description: "Every pool party needs gin.", task_completed: random_time, task_started: date_created },
+  { task_name: "Buy lots of gin", task_description: "Every pool party needs gin.", task_completed: random_time, task_started: date_created  },
   { task_name: "Secure a pool", task_description: "Every pool party needs a pool.", task_started: date_created },
-  { task_name: "Make guacamole", task_description: "Glad I have an avacado tree.", task_completed: random_time, task_started: date_created },
+  { task_name: "Make guacamole", task_description: "Glad I have an avacado tree.", task_completed: random_time, task_started: date_created},
   { task_name: "Start a Spotify List", task_description: "Need tunes for the party.", task_started: date_created },
   { task_name: "Share Spotify Pool Party List Access", task_description: "The more tunes the bettah.", task_completed: random_time, task_started: date_created },
   { task_name: "High Five Somebody You Don't Know", task_description: "Include yourself.", task_completed: random_time, task_started: date_created },
@@ -20,8 +20,25 @@ tasks = [
   { task_name: "Nap.", task_description: "Planning a pool party is freakin' hard!", task_completed: random_time, task_started: date_created }
 ]
 
+
+
+
+people = [
+
+{name: "Cohort One"},
+{name: "Cohort Two"},
+{name: "Cohort Three"},
+{name: "Kari & Jeremy"},
+{name: "Cynthia & Elise"},
+{name: "Crystal & Karen"}
+
+
+]
+
 tasks.each do |task|
   Task.create task
 end
+
+
 
 

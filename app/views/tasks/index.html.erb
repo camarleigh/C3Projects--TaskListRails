@@ -6,7 +6,7 @@
 
 <%= link_to "Add a New Task" , "/tasks/new" %>
 
-<table border "5">
+<table border "1">
   <tr>
 
 
@@ -19,11 +19,14 @@
     </th>
 
     <th> 
-      TASK COMPLETED
+      DATE STARTED
     </th>
 
     <th>
-      DATE STARTED
+      TASK COMPLETED
+    </th>
+
+    <th>ASSIGNED TO
     </th>
 
     <th>
@@ -42,10 +45,15 @@
       <td> <%= task.task_description %>
       </td>
 
-      <td> <%= task.task_completed %>
+      <td> <%= task.task_started %>
       </td>
 
-      <td><%= task.task_started %>
+      <td>
+        <%= task.task_completed %>
+      </td>
+
+      <td>
+        <%= task.person_id %>
       </td>
 
 
