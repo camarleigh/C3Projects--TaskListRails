@@ -21,7 +21,9 @@ tasks = [
 ]
 
 
-
+tasks.each do |task|
+  Task.create task
+end
 
 people = [
 
@@ -35,10 +37,7 @@ people = [
 
 ]
 
-tasks.each do |task|
-  Task.create task
+people.each do |person|
+  Person.create people
 end
-
-
-
 
